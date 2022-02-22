@@ -1,7 +1,7 @@
 class App < ApplicationRecord
   acts_as_paranoid
 
-  enum status: ['private_app', 'public_app']
+  enum status: ['private_app', 'public_app'], _default: 'private_app'
 
   validates_presence_of :status
   validates_uniqueness_of :name

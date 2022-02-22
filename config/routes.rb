@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     patch :archive, on: :member
   end
 
-  resources :data_sources, only: [:index, :create, :update]
+  resources :data_sources, only: [:index, :create, :update] do
+    post :auto_create_pages, on: :member
+  end
 
   resources :pages do
     get :components, on: :member

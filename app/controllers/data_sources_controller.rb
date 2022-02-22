@@ -1,5 +1,5 @@
 class DataSourcesController < ApplicationController
-  before_action :set_data_source, only: %i[ show update destroy ]
+  before_action :set_data_source, only: %i[ show update destroy auto_create_pages]
 
   # GET /data_sources
   # GET /data_sources.json
@@ -21,6 +21,19 @@ class DataSourcesController < ApplicationController
       render json: { data_source: data_source }, status: :created
     else
       render json: data_source.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def auto_create_pages
+    outcome = AppFromTables.run(
+      data_source: @data_source,
+      user: @current_user
+    )
+    if outcome.valid?
+      render json: { result: outcome.result }, status: :ok
+    else
+      render json: { errors: outcome.errors },
+              status: :unprocessable_entity
     end
   end
 
