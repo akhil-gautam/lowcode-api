@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FormQuery < ActiveInteraction::Base
   object :data_source, class: DataSource
   object :form, class: Form

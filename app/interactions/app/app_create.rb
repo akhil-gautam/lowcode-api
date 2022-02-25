@@ -1,5 +1,6 @@
-class AppCreate < ActiveInteraction::Base
+# frozen_string_literal: true
 
+class AppCreate < ActiveInteraction::Base
   string :data_source_id
   string :name
   string :user_id

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Page < ApplicationRecord
   acts_as_paranoid
 
@@ -5,11 +7,11 @@ class Page < ApplicationRecord
   has_one :data_source, through: :app
   has_many :components, dependent: :destroy
 
-  validates_presence_of :name
-  validates_presence_of :page_order
+  validates :name, presence: true
+  validates :page_order, presence: true
   validates :page_order, uniqueness: { scope: :app_id }
 
-  default_scope  { order(:page_order => :asc) }
+  default_scope { order(page_order: :asc) }
 
   delegate :user, to: :app
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QueryTest < ActiveInteraction::Base
   string :data_source_query
   object :data_source, class: DataSource

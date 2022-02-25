@@ -1,5 +1,6 @@
-class PageCreate < ActiveInteraction::Base
+# frozen_string_literal: true
 
+class PageCreate < ActiveInteraction::Base
   string :app_id
   string :name
   integer :page_order

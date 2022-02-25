@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostgresQuery < ActiveInteraction::Base
   object :data_source, class: DataSource
   string :db_query

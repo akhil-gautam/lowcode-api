@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_143739) do
+ActiveRecord::Schema.define(version: 2022_02_25_093638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(version: 2022_02_15_143739) do
     t.datetime "deleted_at", precision: 6
     t.index ["app_id"], name: "index_forms_on_app_id"
     t.index ["deleted_at"], name: "index_forms_on_deleted_at"
+  end
+
+  create_table "lockers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "enkrypted_ciphertext"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

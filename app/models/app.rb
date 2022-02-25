@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class App < ApplicationRecord
   acts_as_paranoid
 
-  enum status: ['private_app', 'public_app'], _default: 'private_app'
+  enum status: { "private_app" => 0, "public_app" => 1 }, _default: "private_app"
 
-  validates_presence_of :status
-  validates_uniqueness_of :name
+  validates :status, presence: true
+  validates :name, uniqueness: true
 
   belongs_to :data_source
   belongs_to :user

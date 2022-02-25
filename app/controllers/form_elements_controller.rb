@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FormElementsController < ApplicationController
-  before_action :set_form_element, only: %i[ show update destroy ]
+  before_action :set_form_element, only: %i[show update destroy]
 
   # GET /form_elements
   # GET /form_elements.json
@@ -9,8 +11,7 @@ class FormElementsController < ApplicationController
 
   # GET /form_elements/1
   # GET /form_elements/1.json
-  def show
-  end
+  def show; end
 
   # POST /form_elements
   # POST /form_elements.json
@@ -18,7 +19,7 @@ class FormElementsController < ApplicationController
     @form_element = FormElement.new(form_element_params)
 
     if @form_element.save
-      render json: {message: 'Success!'}, status: :ok
+      render json: { message: "Success!" }, status: :ok
     else
       render json: @form_element.errors.full_messages, status: :unprocessable_entity
     end
@@ -41,13 +42,14 @@ class FormElementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_form_element
-      @form_element = FormElement.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def form_element_params
-      params.require(:form_element).permit!
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_form_element
+    @form_element = FormElement.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def form_element_params
+    params.require(:form_element).permit!
+  end
 end

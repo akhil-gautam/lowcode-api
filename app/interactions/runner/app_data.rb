@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class AppData < ActiveInteraction::Base
   object :app, class: App
 
-  validates :app,  presence: true
+  validates :app, presence: true
 
   def execute
     App.transaction do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RunnerController < ApplicationController
   skip_before_action :authorize_request
 
@@ -11,18 +13,14 @@ class RunnerController < ApplicationController
 
   def set_app
     @app = App.includes(:pages).where(id: params[:app_id]).order("pages.page_order").first
-    if @app.nil?
-       raise ActiveRecord::RecordNotFound
-    end
+    raise ActiveRecord::RecordNotFound if @app.nil?
   end
 
   def validate_app_status
     if @app.private_app?
       authorize_request
       # in case user is authorized but is trying to access someone else's app_id
-      if @current_user.nil? || @app.user.id != @current_user.id
-        raise UnauthorizedError
-      end
+      raise UnauthorizedError if @current_user.nil? || @app.user.id != @current_user.id
     end
   end
 end

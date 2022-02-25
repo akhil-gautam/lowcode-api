@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DataSourcesController < ApplicationController
-  before_action :set_data_source, only: %i[ show update destroy auto_create_pages]
+  before_action :set_data_source, only: %i[show update destroy auto_create_pages]
 
   # GET /data_sources
   # GET /data_sources.json
@@ -9,18 +11,18 @@ class DataSourcesController < ApplicationController
 
   # GET /data_sources/1
   # GET /data_sources/1.json
-  def show
-  end
+  def show; end
 
   # POST /data_sources
   # POST /data_sources.json
   def create
-    data_source = DataSource.new(data_source_params.merge({ user_id: @current_user.id }))
-
-    if data_source.save
-      render json: { data_source: data_source }, status: :created
+    outcome = DataSourceCreate.run(
+      data_source_params.merge(user_id: @current_user.id)
+    )
+    if outcome.valid?
+      render json: { result: outcome.result }, status: :created
     else
-      render json: data_source.errors.full_messages, status: :unprocessable_entity
+      render json: { errors: outcome.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -33,17 +35,20 @@ class DataSourcesController < ApplicationController
       render json: { result: outcome.result }, status: :ok
     else
       render json: { errors: outcome.errors },
-              status: :unprocessable_entity
+             status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /data_sources/1
   # PATCH/PUT /data_sources/1.json
   def update
-    if @data_source.update(data_source_params)
-      render json: { message: 'Updated!' }, status: :created
+    outcome = DataSourceUpdate.run(
+      data_source_params.merge(data_source: @data_source)
+    )
+    if outcome.valid?
+      render json: { result: outcome.result }, status: :created
     else
-      render json: @data_source.errors.full_messages, status: :unprocessable_entity
+      render json: { errors: outcome.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -54,13 +59,14 @@ class DataSourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_data_source
-      @data_source = DataSource.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def data_source_params
-      params.require(:data_source).permit!
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_data_source
+    @data_source = DataSource.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def data_source_params
+    params.require(:data_source).permit!
+  end
 end

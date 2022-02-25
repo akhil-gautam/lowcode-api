@@ -1,5 +1,6 @@
-class ComponentCreate < ActiveInteraction::Base
+# frozen_string_literal: true
 
+class ComponentCreate < ActiveInteraction::Base
   string :page_id
   string :heading
   string :component_type

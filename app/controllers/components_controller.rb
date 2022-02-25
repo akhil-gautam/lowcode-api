@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ComponentsController < ApplicationController
   skip_before_action :authorize_request, only: [:exec_query]
-  before_action :set_component, only: %i[ show update destroy exec_query archive ]
+  before_action :set_component, only: %i[show update destroy exec_query archive]
   before_action :set_data_source, only: [:exec_query]
 
   # GET /components
@@ -10,19 +12,18 @@ class ComponentsController < ApplicationController
   end
 
   def exec_query
-    outcome = ComponentQuery.run({ data_source: @data_source, component: @component})
+    outcome = ComponentQuery.run({ data_source: @data_source, component: @component })
     if outcome.valid?
       render json: { result: outcome.result }, status: :ok
     else
       render json: { errors: outcome.errors },
-              status: :unprocessable_entity
+             status: :unprocessable_entity
     end
   end
 
   # GET /components/1
   # GET /components/1.json
-  def show
-  end
+  def show; end
 
   # POST /components
   # POST /components.json
@@ -53,24 +54,25 @@ class ComponentsController < ApplicationController
   end
 
   def archive
-    if @component.user.id === @current_user.id
+    if @component.user.id == @current_user.id
       @component.destroy
-      render json: {message: 'Success!'}, status: :ok
+      render json: { message: "Success!" }, status: :ok
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_component
-      @component = Component.find(params[:id])
-    end
 
-    def set_data_source
-      @data_source = @component.data_source
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_component
+    @component = Component.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def component_params
-      params.require(:component).permit!
-    end
+  def set_data_source
+    @data_source = @component.data_source
+  end
+
+  # Only allow a list of trusted parameters through.
+  def component_params
+    params.require(:component).permit!
+  end
 end

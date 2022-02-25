@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ComponentQuery < ActiveInteraction::Base
   object :data_source, class: DataSource
   object :component, class: Component

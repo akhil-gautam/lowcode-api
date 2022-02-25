@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QueriesController < ApplicationController
   before_action :set_data_source
 
@@ -10,12 +12,12 @@ class QueriesController < ApplicationController
       render json: { result: outcome.result }, status: :ok
     else
       render json: { errors: outcome.errors },
-              status: :unprocessable_entity
+             status: :unprocessable_entity
     end
   end
 
   private
-  
+
   def set_data_source
     @data_source = DataSource.find(params[:data_source_id])
   end

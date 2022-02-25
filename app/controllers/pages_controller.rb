@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
   skip_before_action :authorize_request, only: [:components]
-  before_action :set_page, only: %i[ show update destroy components archive]
+  before_action :set_page, only: %i[show update destroy components archive]
 
   # GET /pages
   # GET /pages.json
@@ -14,8 +16,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1
   # GET /pages/1.json
-  def show
-  end
+  def show; end
 
   # POST /pages
   # POST /pages.json
@@ -33,7 +34,7 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1.json
   def update
     if @page.update(page_params)
-      render json: {message: 'Updated!'}, status: :ok
+      render json: { message: "Updated!" }, status: :ok
     else
       render json: @page.errors.full_messages, status: :unprocessable_entity
     end
@@ -46,20 +47,21 @@ class PagesController < ApplicationController
   end
 
   def archive
-    if @page.user.id === @current_user.id
+    if @page.user.id == @current_user.id
       @page.destroy
-      render json: {message: 'Success!'}, status: :ok
+      render json: { message: "Success!" }, status: :ok
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_page
-      @page = Page.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def page_params
-      params.require(:page).permit(:name, :page_order, :app_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_page
+    @page = Page.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def page_params
+    params.require(:page).permit(:name, :page_order, :app_id)
+  end
 end
