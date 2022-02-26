@@ -33,7 +33,7 @@ class AppFromTables < ActiveInteraction::Base
           app_id: app.id,
           page_order: index
         )
-        component = compose(
+        compose(
           ComponentCreate,
           page_id: page.id,
           heading: table.humanize,

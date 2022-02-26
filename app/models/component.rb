@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Component < ApplicationRecord
+  acts_as_paranoid
   enum component_type: { "datatable" => 0, "cards_list" => 1, "chart" => 2, "detail" => 3 }
 
   belongs_to :page

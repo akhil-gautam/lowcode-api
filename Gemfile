@@ -46,6 +46,7 @@ gem "rack-attack"
 gem "rack-cors"
 group :development, :test do
   gem "dotenv-rails"
+  gem "letter_opener"
   gem "pry"
   gem "pry-rails"
   gem "rubocop-github"

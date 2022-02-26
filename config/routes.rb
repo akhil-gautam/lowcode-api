@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     post :run, on: :collection
   end
 
+  resources :archives, only: %i[index destroy] do
+    put :restore, on: :member
+  end
+
   # routes to run the application
   get "runner/:app_id/app_data", to: "runner#app_data"
   get "runner/:component_id/exec_query", to: "runner#exec_query"

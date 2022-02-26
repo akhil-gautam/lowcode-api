@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_25_093638) do
+ActiveRecord::Schema.define(version: 2022_02_26_133422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_093638) do
     t.datetime "deleted_at", precision: 6
     t.index ["data_source_id"], name: "index_apps_on_data_source_id"
     t.index ["deleted_at"], name: "index_apps_on_deleted_at"
+    t.index ["name"], name: "index_apps_on_name", unique: true
     t.index ["user_id"], name: "index_apps_on_user_id"
   end
 
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_093638) do
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "settings", default: {}
     t.datetime "deleted_at", precision: 6
+    t.index ["component_order", "page_id"], name: "index_components_on_component_order_and_page_id", unique: true
     t.index ["deleted_at"], name: "index_components_on_deleted_at"
     t.index ["page_id"], name: "index_components_on_page_id"
   end
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_093638) do
     t.string "placeholder", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["field_order", "form_id"], name: "index_form_elements_on_field_order_and_form_id", unique: true
     t.index ["form_id"], name: "index_form_elements_on_form_id"
   end
 
@@ -94,6 +97,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_093638) do
     t.datetime "deleted_at", precision: 6
     t.index ["app_id"], name: "index_pages_on_app_id"
     t.index ["deleted_at"], name: "index_pages_on_deleted_at"
+    t.index ["page_order", "app_id"], name: "index_pages_on_page_order_and_app_id", unique: true
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -101,6 +105,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_093638) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "apps", "data_sources"

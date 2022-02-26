@@ -8,17 +8,15 @@ class ApplicationController < ActionController::API
   def authorize_request
     header = request.headers["Authorization"]
     header = header.split(" ").last if header
-    if header
-      begin
-        decoded = JsonWebToken.decode(header)
-        @current_user = User.find(decoded[:user_id])
-      rescue ActiveRecord::RecordNotFound
-        raise UnauthorizedError
-      rescue JWT::DecodeError
-        render json: { errors: "Session expired. Please login again!" }, status: :unauthorized
-      end
-    else
+    raise UnauthorizedError unless header
+
+    begin
+      decoded = JsonWebToken.decode(header)
+      @current_user = User.find(decoded[:user_id])
+    rescue ActiveRecord::RecordNotFound
       raise UnauthorizedError
+    rescue JWT::DecodeError
+      render json: { errors: "Session expired. Please login again!" }, status: :unauthorized
     end
   end
 

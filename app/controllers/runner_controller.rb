@@ -17,10 +17,10 @@ class RunnerController < ApplicationController
   end
 
   def validate_app_status
-    if @app.private_app?
-      authorize_request
-      # in case user is authorized but is trying to access someone else's app_id
-      raise UnauthorizedError if @current_user.nil? || @app.user.id != @current_user.id
-    end
+    return unless @app.private_app?
+
+    authorize_request
+    # in case user is authorized but is trying to access someone else's app_id
+    raise UnauthorizedError if @current_user.nil? || @app.user.id != @current_user.id
   end
 end

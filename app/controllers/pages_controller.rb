@@ -47,10 +47,10 @@ class PagesController < ApplicationController
   end
 
   def archive
-    if @page.user.id == @current_user.id
-      @page.destroy
-      render json: { message: "Success!" }, status: :ok
-    end
+    return unless @page.user.id == @current_user.id
+
+    @page.destroy
+    render json: { message: "Success!" }, status: :ok
   end
 
   private

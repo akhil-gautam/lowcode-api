@@ -2,7 +2,7 @@
 
 class AppsController < ApplicationController
   skip_before_action :authorize_request, only: %i[show pages forms]
-  before_action :set_app, only: %i[show update destroy pages forms status archive]
+  before_action :set_app, only: %i[show update destroy pages forms archive]
 
   # GET /apps
   # GET /apps.json
@@ -51,10 +51,10 @@ class AppsController < ApplicationController
   end
 
   def archive
-    if @app.user.id == @current_user.id
-      @app.destroy
-      render json: { message: "Success!" }, status: :ok
-    end
+    return unless @app.user.id == @current_user.id
+
+    @app.destroy
+    render json: { message: "Success!" }, status: :ok
   end
 
   private

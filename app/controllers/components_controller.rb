@@ -41,9 +41,9 @@ class ComponentsController < ApplicationController
   # PATCH/PUT /components/1.json
   def update
     if @component.update(component_params)
-      render :show, status: :ok
+      render json: { message: "Success!" }, status: :ok
     else
-      render json: @component.errors, status: :unprocessable_entity
+      render json: @component.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -54,10 +54,10 @@ class ComponentsController < ApplicationController
   end
 
   def archive
-    if @component.user.id == @current_user.id
-      @component.destroy
-      render json: { message: "Success!" }, status: :ok
-    end
+    return unless @component.user.id == @current_user.id
+
+    @component.destroy
+    render json: { message: "Success!" }, status: :ok
   end
 
   private
