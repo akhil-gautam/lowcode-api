@@ -9,7 +9,13 @@ class MysqlQuery < ActiveInteraction::Base
   def execute
     ActiveRecord::Base.transaction do
       username = data_source.settings.delete("user")
-      connection = Mysql2::Client.new(data_source.settings.merge({ username: username }))
+      if data_source.settings["password"].present?
+        locker_id = data_source.settings.delete("password")
+        password = Locker.find(locker_id).enkrypted
+      else
+        password = ""
+      end
+      connection = Mysql2::Client.new(data_source.settings.merge({ username: username, password: password }))
       connection.query(db_query).to_a
     end
   end

@@ -6541,3 +6541,1739 @@ Migrating to AddUniqueIndexToRecords (20220226133422)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(798553871527969410)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "//users" for ::1 at 2022-02-26 21:38:25 +0530
+  
+ActiveRecord::ConnectionNotEstablished (connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:87:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "//users" for ::1 at 2022-02-26 21:38:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"ram@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ram@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ram@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-02-26 16:08:57.051232"], ["updated_at", "2022-02-26 16:08:57.051232"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 201 Created in 284ms (Views: 0.2ms | ActiveRecord: 13.2ms | Allocations: 8418)
+
+
+Started POST "//auth/login" for ::1 at 2022-02-26 21:39:10 +0530
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"user"=>{"email"=>"ram@example.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"ram@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ram@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:8:in `login'
+Completed 200 OK in 294ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1703)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:39:10 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (2.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.9ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 7.8ms | Allocations: 2530)
+Completed 200 OK in 30ms (Views: 3.5ms | ActiveRecord: 9.4ms | Allocations: 12721)
+
+
+Started POST "/data_sources" for ::1 at 2022-02-26 21:43:55 +0530
+Processing by DataSourcesController#create as JSON
+  Parameters: {"data_source"=>{"source"=>"mysql", "settings"=>{"user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306", "database"=>"sakila"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/interactions/locker/locker_create.rb:9:in `execute'
+  [1m[36mLocker Create (1.2ms)[0m  [1m[32mINSERT INTO "lockers" ("enkrypted_ciphertext", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["enkrypted_ciphertext", "j/HWyJY5Q8l+ghpbUHnJjYpHIp8CXVDT69REdebjQ/7LnJXq"], ["created_at", "2022-02-26 16:13:55.910553"], ["updated_at", "2022-02-26 16:13:55.910553"]]
+  ↳ app/interactions/locker/locker_create.rb:9:in `execute'
+  [1m[36mDataSource Create (2.2ms)[0m  [1m[32mINSERT INTO "data_sources" ("source", "settings", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["source", 1], ["settings", "{\"user\":\"root\",\"password\":\"7473f74f-b16c-421e-af1c-1f235d411d74\",\"host\":\"localhost\",\"port\":\"3306\",\"database\":\"sakila\"}"], ["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["created_at", "2022-02-26 16:13:55.918008"], ["updated_at", "2022-02-26 16:13:55.918008"]]
+  ↳ app/interactions/data_source/data_source_create.rb:17:in `block in execute'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/interactions/data_source/data_source_create.rb:11:in `execute'
+Completed 201 Created in 31ms (Views: 0.3ms | ActiveRecord: 13.0ms | Allocations: 10045)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:43:55 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 2.6ms | Allocations: 1604)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.9ms | Allocations: 2879)
+
+
+Started POST "/apps" for ::1 at 2022-02-26 21:44:14 +0530
+Processing by AppsController#create as JSON
+  Parameters: {"data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211", "name"=>"Skila", "app"=>{"name"=>"Skila", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mApp Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "apps" WHERE "apps"."name" = $1 AND "apps"."deleted_at" IS NULL LIMIT $2[0m  [["name", "Skila"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mApp Create (2.4ms)[0m  [1m[32mINSERT INTO "apps" ("name", "status", "user_id", "data_source_id", "created_at", "updated_at", "deleted_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Skila"], ["status", 0], ["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["data_source_id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["created_at", "2022-02-26 16:14:14.578573"], ["updated_at", "2022-02-26 16:14:14.578573"], ["deleted_at", nil]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+Completed 201 Created in 27ms (Views: 0.8ms | ActiveRecord: 5.5ms | Allocations: 8866)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:44:14 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 3.8ms | Allocations: 1730)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.0ms | Allocations: 2904)
+
+
+Started POST "/apps" for ::1 at 2022-02-26 21:44:58 +0530
+Processing by AppsController#create as JSON
+  Parameters: {"data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211", "name"=>"Reviews app", "app"=>{"name"=>"Reviews app", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mApp Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "apps" WHERE "apps"."name" = $1 AND "apps"."deleted_at" IS NULL LIMIT $2[0m  [["name", "Reviews app"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mApp Create (0.8ms)[0m  [1m[32mINSERT INTO "apps" ("name", "status", "user_id", "data_source_id", "created_at", "updated_at", "deleted_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Reviews app"], ["status", 0], ["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["data_source_id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["created_at", "2022-02-26 16:14:58.799174"], ["updated_at", "2022-02-26 16:14:58.799174"], ["deleted_at", nil]]
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/apps_controller.rb:30:in `create'
+Completed 201 Created in 24ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 5310)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:44:58 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 5.1ms | Allocations: 1789)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 1.2ms | Allocations: 2936)
+
+
+Started PATCH "/apps/a2428eef-f1cc-4fad-9015-69e93936bca2" for ::1 at 2022-02-26 21:45:00 +0530
+Processing by AppsController#update as JSON
+  Parameters: {"app"=>{"status"=>"public_app"}, "id"=>"a2428eef-f1cc-4fad-9015-69e93936bca2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "a2428eef-f1cc-4fad-9015-69e93936bca2"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mApp Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "apps" WHERE "apps"."name" = $1 AND "apps"."deleted_at" IS NULL AND "apps"."id" != $2 LIMIT $3[0m  [["name", "Reviews app"], ["id", "a2428eef-f1cc-4fad-9015-69e93936bca2"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mApp Update (0.7ms)[0m  [1m[33mUPDATE "apps" SET "status" = $1, "updated_at" = $2 WHERE "apps"."id" = $3[0m  [["status", 1], ["updated_at", "2022-02-26 16:15:00.818051"], ["id", "a2428eef-f1cc-4fad-9015-69e93936bca2"]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 6309)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:45:00 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 5.0ms | Allocations: 1789)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 2936)
+
+
+Started PATCH "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for ::1 at 2022-02-26 21:45:03 +0530
+Processing by AppsController#update as JSON
+  Parameters: {"app"=>{"status"=>"public_app"}, "id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mApp Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "apps" WHERE "apps"."name" = $1 AND "apps"."deleted_at" IS NULL AND "apps"."id" != $2 LIMIT $3[0m  [["name", "Skila"], ["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mApp Update (0.6ms)[0m  [1m[33mUPDATE "apps" SET "status" = $1, "updated_at" = $2 WHERE "apps"."id" = $3[0m  [["status", 1], ["updated_at", "2022-02-26 16:15:03.493455"], ["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/apps_controller.rb:40:in `update'
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 6088)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:45:03 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.6ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 4.0ms | Allocations: 1788)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.1ms | Allocations: 2936)
+
+
+Started GET "/apps/a2428eef-f1cc-4fad-9015-69e93936bca2/forms" for ::1 at 2022-02-26 21:45:26 +0530
+Started GET "/data_sources" for ::1 at 2022-02-26 21:45:26 +0530
+Started GET "/apps/a2428eef-f1cc-4fad-9015-69e93936bca2/pages" for ::1 at 2022-02-26 21:45:26 +0530
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"a2428eef-f1cc-4fad-9015-69e93936bca2"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "a2428eef-f1cc-4fad-9015-69e93936bca2"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+Processing by DataSourcesController#index as JSON
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"a2428eef-f1cc-4fad-9015-69e93936bca2"}
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (2.5ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "a2428eef-f1cc-4fad-9015-69e93936bca2"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.1ms | Allocations: 73)
+  Rendered apps/forms.json.jbuilder (Duration: 5.5ms | Allocations: 2953)
+Completed 200 OK in 26ms (Views: 3.7ms | ActiveRecord: 9.7ms | Allocations: 11654)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering data_sources/index.json.jbuilder
+  [1m[36mDataSource Load (0.5ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/data_sources/index.json.jbuilder:3
+  [1m[36mApp Load (1.1ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "a2428eef-f1cc-4fad-9015-69e93936bca2"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendered collection of data_sources/_data_source.json.jbuilder [1 times] (Duration: 0.6ms | Allocations: 665)
+  Rendered data_sources/index.json.jbuilder (Duration: 3.5ms | Allocations: 2486)
+Completed 200 OK in 31ms (Views: 5.2ms | ActiveRecord: 13.3ms | Allocations: 17148)
+
+
+Started GET "/apps/a2428eef-f1cc-4fad-9015-69e93936bca2" for ::1 at 2022-02-26 21:45:26 +0530
+  Rendering apps/pages.json.jbuilder
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"a2428eef-f1cc-4fad-9015-69e93936bca2"}
+  [1m[36mPage Load (3.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "a2428eef-f1cc-4fad-9015-69e93936bca2"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 27)
+  [1m[36mApp Load (0.8ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "a2428eef-f1cc-4fad-9015-69e93936bca2"], ["LIMIT", 1]]
+  Rendered apps/pages.json.jbuilder (Duration: 4.8ms | Allocations: 2292)
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+Completed 200 OK in 36ms (Views: 2.4ms | ActiveRecord: 16.8ms | Allocations: 19147)
+
+
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.5ms | Allocations: 115)
+  Rendered apps/show.json.jbuilder (Duration: 1.9ms | Allocations: 513)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 2679)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:45:30 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.7ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 7.5ms | Allocations: 1805)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 1.4ms | Allocations: 2998)
+
+
+Started GET "/data_sources" for ::1 at 2022-02-26 21:45:31 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:45:31 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:45:31 +0530
+Processing by DataSourcesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering data_sources/index.json.jbuilder
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/data_sources/index.json.jbuilder:3
+  Rendered collection of data_sources/_data_source.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 85)
+  Rendered data_sources/index.json.jbuilder (Duration: 2.7ms | Allocations: 1140)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.8ms | Allocations: 2063)
+
+
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (1.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [0 times] (Duration: 0.1ms | Allocations: 17)
+  Rendered apps/pages.json.jbuilder (Duration: 4.0ms | Allocations: 1289)
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 1.7ms | Allocations: 2985)
+
+
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for ::1 at 2022-02-26 21:45:32 +0530
+  [1m[36mForm Load (1.2ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 22)
+  Rendered apps/forms.json.jbuilder (Duration: 4.5ms | Allocations: 1452)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 1.7ms | Allocations: 2902)
+
+
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 30)
+  Rendered apps/show.json.jbuilder (Duration: 0.4ms | Allocations: 211)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 1208)
+
+
+Started POST "/pages" for ::1 at 2022-02-26 21:45:42 +0530
+Processing by PagesController#create as JSON
+  Parameters: {"page"=>{"name"=>"Actors", "page_order"=>"1", "app_id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pages_controller.rb:26:in `create'
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:26:in `create'
+  [1m[36mPage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."page_order" = $1 AND "pages"."deleted_at" IS NULL AND "pages"."app_id" = $2 LIMIT $3[0m  [["page_order", 1], ["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:26:in `create'
+  [1m[36mPage Create (4.8ms)[0m  [1m[32mINSERT INTO "pages" ("name", "page_order", "app_id", "created_at", "updated_at", "deleted_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Actors"], ["page_order", 1], ["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["created_at", "2022-02-26 16:15:42.780278"], ["updated_at", "2022-02-26 16:15:42.780278"], ["deleted_at", nil]]
+  ↳ app/controllers/pages_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pages_controller.rb:26:in `create'
+Completed 201 Created in 41ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 7465)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:45:42 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 1.6ms | Allocations: 342)
+  Rendered apps/pages.json.jbuilder (Duration: 3.3ms | Allocations: 1212)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 2655)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:45:47 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (1.7ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 27)
+  Rendered pages/components.json.jbuilder (Duration: 3.3ms | Allocations: 1148)
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 3.6ms | Allocations: 5939)
+
+
+Started POST "/components" for ::1 at 2022-02-26 21:46:08 +0530
+Processing by ComponentsController#create as JSON
+  Parameters: {"component"=>{"heading"=>"Actors list", "component_order"=>"1", "component_query"=>"select * from actor;", "settings"=>{"row_click_enabled"=>true}, "component_type"=>"datatable", "page_id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mComponent Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "components" WHERE "components"."component_order" = $1 AND "components"."deleted_at" IS NULL AND "components"."page_id" = $2 LIMIT $3[0m  [["component_order", 1], ["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mComponent Create (2.0ms)[0m  [1m[32mINSERT INTO "components" ("heading", "component_order", "component_type", "component_query", "page_id", "created_at", "updated_at", "settings", "deleted_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["heading", "Actors list"], ["component_order", 1], ["component_type", 0], ["component_query", "select * from actor;"], ["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["created_at", "2022-02-26 16:16:08.348371"], ["updated_at", "2022-02-26 16:16:08.348371"], ["settings", "{\"row_click_enabled\":true}"], ["deleted_at", nil]]
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/components_controller.rb:33:in `create'
+Completed 201 Created in 25ms (Views: 0.5ms | ActiveRecord: 5.6ms | Allocations: 8807)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:46:08 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 1.2ms | Allocations: 166)
+  Rendered pages/components.json.jbuilder (Duration: 3.5ms | Allocations: 1061)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 2554)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:46:10 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:46:10 +0530
+Started GET "/data_sources" for ::1 at 2022-02-26 21:46:10 +0530
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.2ms | Allocations: 25)
+  Rendered apps/forms.json.jbuilder (Duration: 2.1ms | Allocations: 1210)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.8ms | Allocations: 2430)
+
+
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.1ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+Processing by DataSourcesController#index as JSON
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 140)
+  Rendering data_sources/index.json.jbuilder
+  Rendered apps/pages.json.jbuilder (Duration: 2.7ms | Allocations: 2104)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 3894)
+
+
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/data_sources/index.json.jbuilder:3
+  Rendered collection of data_sources/_data_source.json.jbuilder [1 times] (Duration: 0.1ms | Allocations: 73)
+  Rendered data_sources/index.json.jbuilder (Duration: 1.7ms | Allocations: 1426)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.9ms | Allocations: 3151)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for ::1 at 2022-02-26 21:46:10 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 30)
+  Rendered apps/show.json.jbuilder (Duration: 0.3ms | Allocations: 216)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1213)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:46:12 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 5.6ms | Allocations: 1791)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.9ms | Allocations: 2940)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:46:15 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.7ms | Allocations: 111)
+  Rendered apps/pages.json.jbuilder (Duration: 3.6ms | Allocations: 944)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.7ms | Allocations: 2357)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for 127.0.0.1 at 2022-02-26 21:46:16 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.2ms | Allocations: 30)
+  Rendered apps/show.json.jbuilder (Duration: 0.4ms | Allocations: 211)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1213)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:46:16 +0530
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:46:16 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:46:16 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 125)
+  Rendered apps/pages.json.jbuilder (Duration: 1.5ms | Allocations: 1093)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 2690)
+
+
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mComponent Load (0.7ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.1ms | Allocations: 68)
+  Rendered pages/components.json.jbuilder (Duration: 2.3ms | Allocations: 1625)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.3ms | Allocations: 3543)
+
+
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:46:16 +0530
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 124)
+  Rendered apps/pages.json.jbuilder (Duration: 2.8ms | Allocations: 1274)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 3973)
+
+
+Started GET "/components/64357fc8-4ca5-4c4a-806d-0ed119d0d9cb/exec_query" for ::1 at 2022-02-26 21:46:16 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:46:16 +0530
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 23)
+  Rendered apps/forms.json.jbuilder (Duration: 1.5ms | Allocations: 1199)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 2368)
+
+
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"}
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mComponent Load (0.7ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mApp Load (0.7ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (3.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 27)
+  Rendered apps/forms.json.jbuilder (Duration: 6.8ms | Allocations: 4706)
+Completed 200 OK in 10ms (Views: 3.8ms | ActiveRecord: 4.0ms | Allocations: 6694)
+
+
+  [1m[36mDataSource Load (1.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.2ms | Allocations: 9782)
+
+
+  
+Mysql2::Error::ConnectionError (Access denied for user 'root'@'localhost' (using password: YES)):
+  
+app/interactions/query/mysql_query.rb:12:in `new'
+app/interactions/query/mysql_query.rb:12:in `block in execute'
+app/interactions/query/mysql_query.rb:10:in `execute'
+app/interactions/query/component_query.rb:10:in `execute'
+app/controllers/components_controller.rb:15:in `exec_query'
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for 127.0.0.1 at 2022-02-26 21:47:51 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 65)
+  Rendered apps/show.json.jbuilder (Duration: 0.3ms | Allocations: 299)
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 6.4ms | Allocations: 6396)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:47:51 +0530
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:47:51 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:47:51 +0530
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 209)
+  Rendered apps/pages.json.jbuilder (Duration: 5.9ms | Allocations: 4336)
+Completed 200 OK in 14ms (Views: 3.3ms | ActiveRecord: 5.4ms | Allocations: 9171)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:47:51 +0530
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:47:51 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 148)
+  Rendered pages/components.json.jbuilder (Duration: 8.6ms | Allocations: 4500)
+Completed 200 OK in 22ms (Views: 6.8ms | ActiveRecord: 9.4ms | Allocations: 12968)
+
+
+  [1m[36mApp Load (0.6ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (1.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 147)
+  Rendered apps/pages.json.jbuilder (Duration: 7.3ms | Allocations: 1637)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 1.6ms | Allocations: 4398)
+
+
+  [1m[36mPage Load (1.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.5ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.1ms | Allocations: 68)
+  Rendered pages/components.json.jbuilder (Duration: 2.2ms | Allocations: 1074)
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 2.1ms | Allocations: 3344)
+
+
+Started GET "/components/64357fc8-4ca5-4c4a-806d-0ed119d0d9cb/exec_query" for ::1 at 2022-02-26 21:47:51 +0530
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.1ms | Allocations: 40)
+  Rendered apps/forms.json.jbuilder (Duration: 1.8ms | Allocations: 1406)
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 2.5ms | Allocations: 5486)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:47:51 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.1ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.2ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 27)
+  Rendered apps/forms.json.jbuilder (Duration: 1.2ms | Allocations: 1171)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 2413)
+
+
+  [1m[36mDataSource Load (1.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ (pry):5:in `block in execute'
+  [1m[36mLocker Load (0.5ms)[0m  [1m[34mSELECT "lockers".* FROM "lockers" WHERE "lockers"."id" = $1 LIMIT $2[0m  [["id", "7473f74f-b16c-421e-af1c-1f235d411d74"], ["LIMIT", 1]]
+  ↳ (pry):5:in `block in execute'
+  [1m[36mCACHE Locker Load (0.0ms)[0m  [1m[34mSELECT "lockers".* FROM "lockers" WHERE "lockers"."id" = $1 LIMIT $2[0m  [["id", "7473f74f-b16c-421e-af1c-1f235d411d74"], ["LIMIT", 1]]
+  ↳ (pry):6:in `block in execute'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/interactions/query/mysql_query.rb:10:in `execute'
+Completed 500 Internal Server Error in 131197ms (ActiveRecord: 11.7ms | Allocations: 176453)
+
+
+  
+Mysql2::Error::ConnectionError (Access denied for user 'root'@'localhost' (using password: YES)):
+  
+app/interactions/query/mysql_query.rb:13:in `new'
+app/interactions/query/mysql_query.rb:13:in `block in execute'
+app/interactions/query/mysql_query.rb:10:in `execute'
+app/interactions/query/component_query.rb:10:in `execute'
+app/controllers/components_controller.rb:15:in `exec_query'
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for 127.0.0.1 at 2022-02-26 21:50:05 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 65)
+  Rendered apps/show.json.jbuilder (Duration: 0.3ms | Allocations: 299)
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 6.6ms | Allocations: 6395)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:50:06 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:50:06 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.1ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 202)
+  Rendered apps/pages.json.jbuilder (Duration: 5.0ms | Allocations: 5282)
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 21:50:06 +0530
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 8002)
+
+
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.5ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 21:50:06 +0530
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 139)
+  Rendered pages/components.json.jbuilder (Duration: 6.1ms | Allocations: 3964)
+Completed 200 OK in 23ms (Views: 5.0ms | ActiveRecord: 9.3ms | Allocations: 17495)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:50:06 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.4ms | Allocations: 147)
+  Rendered apps/pages.json.jbuilder (Duration: 1.8ms | Allocations: 1095)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 2724)
+
+
+Started GET "/components/64357fc8-4ca5-4c4a-806d-0ed119d0d9cb/exec_query" for ::1 at 2022-02-26 21:50:06 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.1ms | Allocations: 75)
+  Rendered pages/components.json.jbuilder (Duration: 1.5ms | Allocations: 1077)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 2676)
+
+
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 21:50:06 +0530
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"}
+  Rendering apps/forms.json.jbuilder
+  [1m[36mComponent Load (1.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mForm Load (0.5ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 40)
+  Rendered apps/forms.json.jbuilder (Duration: 3.5ms | Allocations: 3873)
+Completed 200 OK in 11ms (Views: 3.2ms | ActiveRecord: 3.8ms | Allocations: 9850)
+
+
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.8ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  [1m[36mDataSource Load (1.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 22)
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+  Rendered apps/forms.json.jbuilder (Duration: 1.9ms | Allocations: 1606)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 1.0ms | Allocations: 4762)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/interactions/query/mysql_query.rb:13:in `block in execute'
+  [1m[36mLocker Load (0.1ms)[0m  [1m[34mSELECT "lockers".* FROM "lockers" WHERE "lockers"."id" = $1 LIMIT $2[0m  [["id", "7473f74f-b16c-421e-af1c-1f235d411d74"], ["LIMIT", 1]]
+  ↳ app/interactions/query/mysql_query.rb:13:in `block in execute'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/interactions/query/mysql_query.rb:10:in `execute'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 13.3ms | Allocations: 16749)
+
+
+  
+Mysql2::Error::ConnectionError (Access denied for user 'root'@'localhost' (using password: YES)):
+  
+app/interactions/query/mysql_query.rb:14:in `new'
+app/interactions/query/mysql_query.rb:14:in `block in execute'
+app/interactions/query/mysql_query.rb:10:in `execute'
+app/interactions/query/component_query.rb:10:in `execute'
+app/controllers/components_controller.rb:15:in `exec_query'
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 21:50:20 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"settings"=>{"dbname"=>"", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}, "source"=>"mysql"}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:65:in `set_data_source'
+Completed 422 Unprocessable Entity in 43ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 10712)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:54:14 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.7ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 7.7ms | Allocations: 2360)
+Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 1.6ms | Allocations: 4259)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:54:16 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 6.0ms | Allocations: 1788)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 2990)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:54:35 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 4.2ms | Allocations: 1788)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 1.0ms | Allocations: 2933)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 21:54:43 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"settings"=>{"dbname"=>"", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}, "source"=>"mysql"}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:65:in `set_data_source'
+Completed 422 Unprocessable Entity in 10ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2165)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 21:55:15 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"settings"=>{"dbname"=>"", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}, "source"=>"mysql"}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:65:in `set_data_source'
+Completed 422 Unprocessable Entity in 8ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2082)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:55:43 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 2.4ms | Allocations: 1788)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.6ms | Allocations: 2935)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:57:00 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "17058fc0-f3fd-44c6-a350-1a2da1bf25ac"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.7ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "17058fc0-f3fd-44c6-a350-1a2da1bf25ac"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "17058fc0-f3fd-44c6-a350-1a2da1bf25ac"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 4.5ms | Allocations: 2428)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 1.2ms | Allocations: 3573)
+
+
+Started POST "//auth/login" for ::1 at 2022-02-26 21:57:30 +0530
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"user"=>{"email"=>"ram@example.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"ram@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ram@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:8:in `login'
+Completed 200 OK in 287ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1193)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:57:31 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 4.5ms | Allocations: 1818)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.7ms | Allocations: 3038)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 21:57:48 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.1ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 2.7ms | Allocations: 1788)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 2934)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 22:13:05 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (1.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.5ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 22.9ms | Allocations: 1833)
+Completed 200 OK in 82ms (Views: 37.6ms | ActiveRecord: 12.0ms | Allocations: 5347)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 22:13:15 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"settings"=>{"source"=>"mysql", "dbname"=>"Sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}, "source"=>"mysql"}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:65:in `set_data_source'
+Completed 422 Unprocessable Entity in 11ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 2161)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 22:15:41 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"source"=>"mysql", "dbname"=>"Sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306", "database"=>"Sakila", "settings"=>{"database"=>"Sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:65:in `set_data_source'
+Completed 422 Unprocessable Entity in 10ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 2105)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 22:16:19 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"source"=>"mysql", "dbname"=>"Sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306", "database"=>"Sakila", "settings"=>{"database"=>"Sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:66:in `set_data_source'
+Completed 422 Unprocessable Entity in 23130ms (Views: 0.3ms | ActiveRecord: 14.9ms | Allocations: 22729)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 22:16:45 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 12.1ms | Allocations: 3898)
+Completed 200 OK in 24ms (Views: 10.4ms | ActiveRecord: 4.8ms | Allocations: 8595)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 22:17:55 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 4.3ms | Allocations: 1788)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 2991)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 22:18:07 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"source"=>"mysql", "settings"=>{"database"=>"sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:66:in `set_data_source'
+Completed 422 Unprocessable Entity in 9508ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 11247)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 22:18:21 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"source"=>"mysql", "settings"=>{"database"=>"sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:66:in `set_data_source'
+Completed 422 Unprocessable Entity in 92762ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 29950)
+
+
+Started PATCH "/data_sources/772f1d21-d348-42cd-b00e-bb3c34738211" for ::1 at 2022-02-26 22:23:39 +0530
+Processing by DataSourcesController#update as JSON
+  Parameters: {"data_source"=>{"source"=>"mysql", "settings"=>{"database"=>"sakila", "user"=>"root", "password"=>"[FILTERED]", "host"=>"localhost", "port"=>"3306"}}, "id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/data_sources_controller.rb:65:in `set_data_source'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/interactions/data_source/data_source_update.rb:20:in `block in execute'
+  [1m[36mDataSource Update (0.6ms)[0m  [1m[33mUPDATE "data_sources" SET "settings" = $1, "updated_at" = $2 WHERE "data_sources"."id" = $3[0m  [["settings", "{\"database\":\"sakila\",\"user\":\"root\",\"password\":\"\",\"host\":\"localhost\",\"port\":\"3306\"}"], ["updated_at", "2022-02-26 16:53:39.744353"], ["id", "772f1d21-d348-42cd-b00e-bb3c34738211"]]
+  ↳ app/interactions/data_source/data_source_update.rb:20:in `block in execute'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/interactions/data_source/data_source_update.rb:11:in `execute'
+Completed 201 Created in 22ms (Views: 0.1ms | ActiveRecord: 10.9ms | Allocations: 9951)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 22:23:39 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 6.8ms | Allocations: 3896)
+Completed 200 OK in 17ms (Views: 5.3ms | ActiveRecord: 4.5ms | Allocations: 8588)
+
+
+Started POST "/queries/run" for ::1 at 2022-02-26 22:23:56 +0530
+Processing by QueriesController#run as JSON
+  Parameters: {"data_source_query"=>"select * from actor;", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211", "query"=>{"data_source_query"=>"select * from actor;", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.1ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/queries_controller.rb:22:in `set_data_source'
+Completed 200 OK in 69ms (Views: 7.5ms | ActiveRecord: 0.4ms | Allocations: 11876)
+
+
+Started GET "/builders" for ::1 at 2022-02-26 22:24:15 +0530
+Processing by BuildersController#index as JSON
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering builders/index.json.jbuilder
+  [1m[36mApp Load (3.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."user_id" = $1 AND "apps"."status" IN ($2, $3)[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["status", 1], ["status", 0]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  [1m[36mDataSource Load (0.7ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/builders/index.json.jbuilder:6
+  Rendered builders/index.json.jbuilder (Duration: 9.9ms | Allocations: 1859)
+Completed 200 OK in 20ms (Views: 6.5ms | ActiveRecord: 9.0ms | Allocations: 3183)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:24:18 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (1.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.5ms | Allocations: 193)
+  Rendered apps/pages.json.jbuilder (Duration: 8.4ms | Allocations: 2625)
+Completed 200 OK in 24ms (Views: 4.2ms | ActiveRecord: 7.5ms | Allocations: 7081)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for 127.0.0.1 at 2022-02-26 22:24:19 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 38)
+  Rendered apps/show.json.jbuilder (Duration: 0.4ms | Allocations: 229)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1275)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:24:19 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:24:19 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.4ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:24:19 +0530
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.5ms | Allocations: 125)
+  Rendered apps/pages.json.jbuilder (Duration: 3.7ms | Allocations: 1088)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 2770)
+
+
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 118)
+  Rendered apps/pages.json.jbuilder (Duration: 1.6ms | Allocations: 1063)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 2576)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:24:19 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.8ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.4ms | Allocations: 124)
+  Rendered pages/components.json.jbuilder (Duration: 6.7ms | Allocations: 4511)
+Completed 200 OK in 18ms (Views: 5.3ms | ActiveRecord: 5.2ms | Allocations: 9456)
+
+
+Started GET "/components/64357fc8-4ca5-4c4a-806d-0ed119d0d9cb/exec_query" for ::1 at 2022-02-26 22:24:20 +0530
+  [1m[36mApp Load (1.0ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"}
+  Rendering apps/forms.json.jbuilder
+  [1m[36mComponent Load (1.9ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mForm Load (1.6ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.1ms | Allocations: 39)
+  Rendered apps/forms.json.jbuilder (Duration: 11.3ms | Allocations: 2946)
+Completed 200 OK in 44ms (Views: 10.0ms | ActiveRecord: 16.3ms | Allocations: 14895)
+
+
+  [1m[36mDataSource Load (1.1ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 24ms (Views: 3.7ms | ActiveRecord: 3.0ms | Allocations: 15422)
+
+
+Started POST "/queries/run" for ::1 at 2022-02-26 22:24:41 +0530
+Processing by QueriesController#run as JSON
+  Parameters: {"data_source_query"=>"show tables;", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211", "query"=>{"data_source_query"=>"show tables;", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/queries_controller.rb:22:in `set_data_source'
+Completed 200 OK in 30ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1839)
+
+
+Started POST "/queries/run" for ::1 at 2022-02-26 22:24:53 +0530
+Processing by QueriesController#run as JSON
+  Parameters: {"data_source_query"=>"select * from film_list;", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211", "query"=>{"data_source_query"=>"select * from film_list;", "data_source_id"=>"772f1d21-d348-42cd-b00e-bb3c34738211"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."id" = $1 LIMIT $2[0m  [["id", "772f1d21-d348-42cd-b00e-bb3c34738211"], ["LIMIT", 1]]
+  ↳ app/controllers/queries_controller.rb:22:in `set_data_source'
+Completed 200 OK in 171ms (Views: 71.7ms | ActiveRecord: 0.4ms | Allocations: 80165)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:25:17 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:25:17 +0530
+Started GET "/data_sources" for ::1 at 2022-02-26 22:25:17 +0530
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mForm Load (0.8ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 28)
+  [1m[36mApp Load (1.0ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  Rendered apps/forms.json.jbuilder (Duration: 4.0ms | Allocations: 3287)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.3ms | Allocations: 4754)
+
+
+Processing by DataSourcesController#index as JSON
+  [1m[36mPage Load (0.8ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 158)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  Rendered apps/pages.json.jbuilder (Duration: 3.4ms | Allocations: 2350)
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.8ms | Allocations: 4898)
+
+
+  Rendering data_sources/index.json.jbuilder
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/data_sources/index.json.jbuilder:3
+  Rendered collection of data_sources/_data_source.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 113)
+  Rendered data_sources/index.json.jbuilder (Duration: 2.3ms | Allocations: 1666)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.1ms | Allocations: 3760)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for ::1 at 2022-02-26 22:25:17 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 32)
+  Rendered apps/show.json.jbuilder (Duration: 0.3ms | Allocations: 218)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1266)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:25:20 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.6ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 61)
+  Rendered pages/components.json.jbuilder (Duration: 3.0ms | Allocations: 923)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.0ms | Allocations: 2409)
+
+
+Started POST "/components" for ::1 at 2022-02-26 22:25:53 +0530
+Processing by ComponentsController#create as JSON
+  Parameters: {"component"=>{"heading"=>"Films list", "component_order"=>"2", "component_query"=>"select title, description from film_list;", "settings"=>{"header"=>"title", "body"=>"description", "footer_action_enabled"=>false}, "component_type"=>"cards_list", "page_id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mComponent Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "components" WHERE "components"."component_order" = $1 AND "components"."deleted_at" IS NULL AND "components"."page_id" = $2 LIMIT $3[0m  [["component_order", 2], ["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mComponent Create (1.3ms)[0m  [1m[32mINSERT INTO "components" ("heading", "component_order", "component_type", "component_query", "page_id", "created_at", "updated_at", "settings", "deleted_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["heading", "Films list"], ["component_order", 2], ["component_type", 1], ["component_query", "select title, description from film_list;"], ["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["created_at", "2022-02-26 16:55:53.109050"], ["updated_at", "2022-02-26 16:55:53.109050"], ["settings", "{\"header\":\"title\",\"body\":\"description\",\"footer_action_enabled\":false}"], ["deleted_at", nil]]
+  ↳ app/controllers/components_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/components_controller.rb:33:in `create'
+Completed 201 Created in 19ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 5413)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:25:53 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [2 times] (Duration: 0.2ms | Allocations: 107)
+  Rendered pages/components.json.jbuilder (Duration: 1.7ms | Allocations: 1105)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 2570)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:25:56 +0530
+Started GET "/data_sources" for ::1 at 2022-02-26 22:25:56 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:25:56 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 147)
+  Rendered apps/pages.json.jbuilder (Duration: 2.3ms | Allocations: 1115)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 2657)
+
+
+Processing by DataSourcesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", "4b74dcad-5205-47a3-a635-833b0fa4339d"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize_request'
+  Rendering data_sources/index.json.jbuilder
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" WHERE "data_sources"."user_id" = $1[0m  [["user_id", "4b74dcad-5205-47a3-a635-833b0fa4339d"]]
+  ↳ app/views/data_sources/index.json.jbuilder:3
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  Rendered collection of data_sources/_data_source.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 76)
+  Rendered data_sources/index.json.jbuilder (Duration: 2.1ms | Allocations: 1665)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2680)
+
+
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.1ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 23)
+  Rendered apps/forms.json.jbuilder (Duration: 1.2ms | Allocations: 1120)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 2768)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for ::1 at 2022-02-26 22:25:56 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 30)
+  Rendered apps/show.json.jbuilder (Duration: 0.2ms | Allocations: 211)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1208)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for 127.0.0.1 at 2022-02-26 22:26:00 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.1ms | Allocations: 30)
+  Rendered apps/show.json.jbuilder (Duration: 0.4ms | Allocations: 211)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 1208)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:26:01 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:26:01 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (7.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:26:01 +0530
+  [1m[36mComponent Load (1.1ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [2 times] (Duration: 0.2ms | Allocations: 141)
+  Rendered pages/components.json.jbuilder (Duration: 20.0ms | Allocations: 1573)
+Completed 200 OK in 43ms (Views: 19.5ms | ActiveRecord: 9.0ms | Allocations: 3193)
+
+
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (1.0ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.3ms | Allocations: 118)
+  Rendered apps/pages.json.jbuilder (Duration: 2.3ms | Allocations: 1051)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 1.5ms | Allocations: 2972)
+
+
+Started GET "/components/64357fc8-4ca5-4c4a-806d-0ed119d0d9cb/exec_query" for ::1 at 2022-02-26 22:26:01 +0530
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.2ms | Allocations: 118)
+  Rendered apps/pages.json.jbuilder (Duration: 1.6ms | Allocations: 1009)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 2694)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:26:01 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"}
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:26:01 +0530
+  [1m[36mComponent Load (0.8ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:26:01 +0530
+  [1m[36mDataSource Load (1.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 2.1ms | Allocations: 13695)
+
+
+  [1m[36mComponent Load (5.9ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.7ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.4ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 23)
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  Rendered apps/forms.json.jbuilder (Duration: 2.1ms | Allocations: 1225)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 3408)
+
+
+  [1m[36mApp Load (0.6ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.5ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 22)
+  Rendered apps/forms.json.jbuilder (Duration: 1.8ms | Allocations: 1159)
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 6.6ms | Allocations: 5151)
+
+
+Completed 200 OK in 59ms (Views: 10.7ms | ActiveRecord: 6.6ms | Allocations: 46444)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:26:18 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [2 times] (Duration: 0.2ms | Allocations: 107)
+  Rendered pages/components.json.jbuilder (Duration: 1.7ms | Allocations: 1105)
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 1.0ms | Allocations: 2571)
+
+
+  [1m[36mComponent Load (1.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL ORDER BY "components"."component_order" ASC[0m
+  [1m[36mComponent Load (0.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL ORDER BY "components"."component_order" DESC, "components"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:27:17 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.6ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 92ms (Views: 20.3ms | ActiveRecord: 1.0ms | Allocations: 27402)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:27:20 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.7ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.7ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 67ms (Views: 15.6ms | ActiveRecord: 1.5ms | Allocations: 27404)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:27:49 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.6ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (1.1ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 85ms (Views: 28.8ms | ActiveRecord: 1.7ms | Allocations: 27405)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:27:50 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.8ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 82ms (Views: 10.6ms | ActiveRecord: 1.1ms | Allocations: 27407)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:27:53 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 74ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 27404)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:28:12 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.2ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 49ms (Views: 10.3ms | ActiveRecord: 0.5ms | Allocations: 27404)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:28:15 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (1.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 83ms (Views: 26.2ms | ActiveRecord: 1.7ms | Allocations: 27404)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:28:20 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 59ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 27405)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:28:21 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 92ms (Views: 33.7ms | ActiveRecord: 0.6ms | Allocations: 27407)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:28:43 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.2ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.6ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 67ms (Views: 16.1ms | ActiveRecord: 0.8ms | Allocations: 27405)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:28:54 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 73ms (Views: 21.7ms | ActiveRecord: 0.6ms | Allocations: 27404)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:29:25 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 71ms (Views: 21.5ms | ActiveRecord: 0.6ms | Allocations: 27405)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:29:28 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.2ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 97ms (Views: 32.7ms | ActiveRecord: 0.6ms | Allocations: 27407)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:30:11 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.6ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 63ms (Views: 14.4ms | ActiveRecord: 1.0ms | Allocations: 27405)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641" for 127.0.0.1 at 2022-02-26 22:30:15 +0530
+Processing by AppsController#show as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/show.json.jbuilder
+  Rendered apps/_app.json.jbuilder (Duration: 0.2ms | Allocations: 30)
+  Rendered apps/show.json.jbuilder (Duration: 0.6ms | Allocations: 211)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1212)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:30:15 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:30:15 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  Rendered collection of components/_component.json.jbuilder [2 times] (Duration: 0.2ms | Allocations: 120)
+  Rendered pages/components.json.jbuilder (Duration: 1.9ms | Allocations: 1197)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 2722)
+
+
+Processing by AppsController#pages as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.2ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/pages.json.jbuilder
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.8ms | Allocations: 111)
+  Rendered apps/pages.json.jbuilder (Duration: 2.5ms | Allocations: 961)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 2501)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:30:15 +0530
+Started GET "/components/64357fc8-4ca5-4c4a-806d-0ed119d0d9cb/exec_query" for ::1 at 2022-02-26 22:30:15 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:30:15 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.4ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.4ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"}
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.3ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mComponent Load (1.5ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "64357fc8-4ca5-4c4a-806d-0ed119d0d9cb"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mForm Load (1.7ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.0ms | Allocations: 23)
+  Rendered apps/forms.json.jbuilder (Duration: 3.4ms | Allocations: 2497)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 2.0ms | Allocations: 3678)
+
+
+  [1m[36mDataSource Load (1.9ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 16ms (Views: 3.8ms | ActiveRecord: 3.3ms | Allocations: 15243)
+
+
+Completed 200 OK in 55ms (Views: 10.6ms | ActiveRecord: 0.8ms | Allocations: 43780)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:30:32 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.3ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.3ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 83ms (Views: 21.9ms | ActiveRecord: 0.6ms | Allocations: 27405)
+
+
+Started GET "/components/c207d604-043f-4f50-bdfc-31f3eda73655/exec_query" for ::1 at 2022-02-26 22:30:49 +0530
+Processing by ComponentsController#exec_query as JSON
+  Parameters: {"id"=>"c207d604-043f-4f50-bdfc-31f3eda73655"}
+  [1m[36mComponent Load (0.2ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."id" = $1 ORDER BY "components"."component_order" ASC LIMIT $2[0m  [["id", "c207d604-043f-4f50-bdfc-31f3eda73655"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:67:in `set_component'
+  [1m[36mDataSource Load (0.2ms)[0m  [1m[34mSELECT "data_sources".* FROM "data_sources" INNER JOIN "apps" ON "data_sources"."id" = "apps"."data_source_id" INNER JOIN "pages" ON "apps"."id" = "pages"."app_id" WHERE "apps"."deleted_at" IS NULL AND "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  ↳ app/controllers/components_controller.rb:71:in `set_data_source'
+Completed 200 OK in 64ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 27410)
+
+
+Started GET "/pages/d5e754d0-8ba9-480a-8bd4-7f1085de84d6/components" for ::1 at 2022-02-26 22:32:06 +0530
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/pages" for ::1 at 2022-02-26 22:32:06 +0530
+Processing by PagesController#components as JSON
+  Parameters: {"id"=>"d5e754d0-8ba9-480a-8bd4-7f1085de84d6"}
+Processing by AppsController#pages as JSON
+  [1m[36mPage Load (0.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."id" = $1 ORDER BY "pages"."page_order" ASC LIMIT $2[0m  [["id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"], ["LIMIT", 1]]
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  ↳ app/controllers/pages_controller.rb:60:in `set_page'
+  Rendering pages/components.json.jbuilder
+  [1m[36mComponent Load (0.8ms)[0m  [1m[34mSELECT "components".* FROM "components" WHERE "components"."deleted_at" IS NULL AND "components"."page_id" = $1 ORDER BY "components"."component_order" ASC[0m  [["page_id", "d5e754d0-8ba9-480a-8bd4-7f1085de84d6"]]
+  ↳ app/views/pages/components.json.jbuilder:3
+  [1m[36mApp Load (1.8ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendered collection of components/_component.json.jbuilder [2 times] (Duration: 0.6ms | Allocations: 120)
+  Rendering apps/pages.json.jbuilder
+  Rendered pages/components.json.jbuilder (Duration: 4.7ms | Allocations: 2211)
+Completed 200 OK in 15ms (Views: 5.2ms | ActiveRecord: 1.6ms | Allocations: 4675)
+
+
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."deleted_at" IS NULL AND "pages"."app_id" = $1 ORDER BY "pages"."page_order" ASC[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/pages.json.jbuilder:3
+  Rendered collection of pages/_page.json.jbuilder [1 times] (Duration: 0.6ms | Allocations: 115)
+  Rendered apps/pages.json.jbuilder (Duration: 3.0ms | Allocations: 1337)
+Completed 200 OK in 11ms (Views: 3.2ms | ActiveRecord: 2.4ms | Allocations: 4560)
+
+
+Started GET "/apps/4cd7b0bc-e026-4a1b-b2fd-2634637d7641/forms" for ::1 at 2022-02-26 22:32:06 +0530
+Processing by AppsController#forms as JSON
+  Parameters: {"id"=>"4cd7b0bc-e026-4a1b-b2fd-2634637d7641"}
+  [1m[36mApp Load (0.5ms)[0m  [1m[34mSELECT "apps".* FROM "apps" WHERE "apps"."deleted_at" IS NULL AND "apps"."id" = $1 LIMIT $2[0m  [["id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"], ["LIMIT", 1]]
+  ↳ app/controllers/apps_controller.rb:64:in `set_app'
+  Rendering apps/forms.json.jbuilder
+  [1m[36mForm Load (0.3ms)[0m  [1m[34mSELECT "forms".* FROM "forms" WHERE "forms"."deleted_at" IS NULL AND "forms"."app_id" = $1[0m  [["app_id", "4cd7b0bc-e026-4a1b-b2fd-2634637d7641"]]
+  ↳ app/views/apps/forms.json.jbuilder:3
+  Rendered collection of forms/_form.json.jbuilder [0 times] (Duration: 0.3ms | Allocations: 21)
+  Rendered apps/forms.json.jbuilder (Duration: 1.6ms | Allocations: 1112)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 2212)
+
+

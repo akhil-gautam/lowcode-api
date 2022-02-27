@@ -8,7 +8,13 @@ class PostgresQuery < ActiveInteraction::Base
 
   def execute
     ActiveRecord::Base.transaction do
-      connection = PG.connect(data_source.settings)
+      if data_source.settings["password"].present?
+        locker_id = data_source.settings.delete("password")
+        password = Locker.find(locker_id).enkrypted
+      else
+        password = ""
+      end
+      connection = PG.connect(data_source.settings.merge({ password: password }))
       connection.exec(db_query).to_a
     end
   end
