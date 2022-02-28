@@ -83,4 +83,4 @@ production:
   <<: *default
   database: fossbite_production
   username: fossbite
-  password: <%= ENV["DOCKERHUB_DATABASE_PASSWORD"] %>
+  password: <%= ENV["WEBQL_DATABASE_PASSWORD"] %>

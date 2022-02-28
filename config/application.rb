@@ -20,7 +20,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Dockerhub
+module Webql
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -34,6 +34,7 @@ module Dockerhub
     # config.eager_load_paths << Rails.root.join("extras")
     config.autoload_paths += Dir.glob("#{config.root}/app/interactions/*")
     config.autoload_paths += Dir.glob("#{config.root}/app/custom_errors/*")
+    config.active_job.queue_adapter = :good_job
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.

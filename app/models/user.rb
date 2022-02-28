@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :forms, through: :apps
   has_many :data_sources, dependent: :destroy
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
 end

@@ -27,16 +27,8 @@ class DataSourcesController < ApplicationController
   end
 
   def auto_create_pages
-    outcome = AppFromTables.run(
-      data_source: @data_source,
-      user: @current_user
-    )
-    if outcome.valid?
-      render json: { result: outcome.result }, status: :ok
-    else
-      render json: { errors: outcome.errors },
-             status: :unprocessable_entity
-    end
+    AutoCreatePagesJob.perform_later @data_source, @current_user
+    render json: { result: 'Queued for execution!' }, status: :ok
   end
 
   # PATCH/PUT /data_sources/1
