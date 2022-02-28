@@ -1,7 +1,7 @@
-FROM ruby:3.0.3
+FROM ruby:3.0.2
 
 ENV APP_PATH /var/app
-ENV BUNDLE_VERSION 2.2.22
+ENV BUNDLE_VERSION 2.3.5
 ENV RAILS_PORT 3000
 ENV BUNDLE_PATH /usr/local/bundle
 ENV GEM_PATH /usr/local/bundle

@@ -10403,3 +10403,930 @@ Completed 200 OK in 21ms (Views: 6.4ms | ActiveRecord: 9.6ms | Allocations: 1063
   [1m[36mGoodJob::Process Destroy (0.4ms)[0m  [1m[31mDELETE FROM "good_job_processes" WHERE "good_job_processes"."id" = $1[0m  [["id", "4093ce22-8473-417b-b98e-5ba62fcf6205"]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
   [1m[36mGoodJob::Lockable Advisory Unlock (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(('x'||substr(md5($1::text), 1, 16))::bit(64)::bigint) AS unlocked[0m  [["key", "good_job_processes-4093ce22-8473-417b-b98e-5ba62fcf6205"]]
+[GoodJob] [1] GoodJob started scheduler with queues=* max_threads=5.
+[GoodJob] Notifier errored: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:42:02 +0000
+  
+ActiveRecord::ConnectionNotEstablished (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:87:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] GoodJob error: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+ ["/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:87:in `rescue in new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:313:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:280:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:568:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/attributes.rb:264:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/encryption/encryptable_record.rb:124:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:554:in `block in load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:417:in `attribute_types'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:443:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/type_caster/map.rb:16:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/arel/table.rb:107:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/table_metadata.rb:18:in `type'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:59:in `build'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:54:in `[]'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:126:in `block in expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `each'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `flat_map'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:25:in `build_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:1286:in `build_where_clause'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:729:in `where!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:724:in `where'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:76:in `block in <class:Execution>'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `instance_exec'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `block in _exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `_exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/scoping/named.rb:175:in `block in scope'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:157:in `perform_with_advisory_lock'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `block in method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:428:in `scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/job_performer.rb:27:in `next'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:270:in `block (2 levels) in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:72:in `block in wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:71:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:269:in `block in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/ivar.rb:169:in `safe_execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/scheduled_task.rb:285:in `process_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/timer_set.rb:98:in `block in ns_post_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'"]
+Started GET "/favicon.ico" for 172.19.0.1 at 2022-02-28 17:42:03 +0000
+  
+ActiveRecord::ConnectionNotEstablished (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:87:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] Notifier errored: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+[GoodJob] [1] GoodJob started scheduler with queues=* max_threads=5.
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:43:30 +0000
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] GoodJob error: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+ ["/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:313:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:280:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:568:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/attributes.rb:264:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/encryption/encryptable_record.rb:124:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:554:in `block in load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:417:in `attribute_types'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:443:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/type_caster/map.rb:16:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/arel/table.rb:107:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/table_metadata.rb:18:in `type'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:59:in `build'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:54:in `[]'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:126:in `block in expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `each'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `flat_map'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:25:in `build_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:1286:in `build_where_clause'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:729:in `where!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:724:in `where'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:76:in `block in <class:Execution>'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `instance_exec'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `block in _exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `_exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/scoping/named.rb:175:in `block in scope'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:157:in `perform_with_advisory_lock'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `block in method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:428:in `scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/job_performer.rb:27:in `next'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:270:in `block (2 levels) in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:72:in `block in wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:71:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:269:in `block in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/ivar.rb:169:in `safe_execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/scheduled_task.rb:285:in `process_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/timer_set.rb:98:in `block in ns_post_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'"]
+Started GET "/favicon.ico" for 172.19.0.1 at 2022-02-28 17:43:30 +0000
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] [1] GoodJob started scheduler with queues=* max_threads=5.
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:44:13 +0000
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] GoodJob error: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+ ["/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:313:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:280:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:568:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/attributes.rb:264:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/encryption/encryptable_record.rb:124:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:554:in `block in load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:417:in `attribute_types'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:443:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/type_caster/map.rb:16:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/arel/table.rb:107:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/table_metadata.rb:18:in `type'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:59:in `build'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:54:in `[]'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:126:in `block in expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `each'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `flat_map'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:25:in `build_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:1286:in `build_where_clause'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:729:in `where!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:724:in `where'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:76:in `block in <class:Execution>'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `instance_exec'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `block in _exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `_exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/scoping/named.rb:175:in `block in scope'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:157:in `perform_with_advisory_lock'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `block in method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:428:in `scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/job_performer.rb:27:in `next'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:270:in `block (2 levels) in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:72:in `block in wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:71:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:269:in `block in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/ivar.rb:169:in `safe_execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/scheduled_task.rb:285:in `process_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/timer_set.rb:98:in `block in ns_post_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'"]
+Started GET "/favicon.ico" for 172.19.0.1 at 2022-02-28 17:44:13 +0000
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] Notifier errored: There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+
+[GoodJob] [1] GoodJob started scheduler with queues=* max_threads=5.
+[GoodJob] Notifier errored: We could not find your database: fossbite_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:46:15 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: fossbite_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[GoodJob] GoodJob error: We could not find your database: fossbite_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+
+ ["/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:313:in `retrieve_connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/connection_handling.rb:280:in `connection'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:568:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/attributes.rb:264:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/encryption/encryptable_record.rb:124:in `load_schema!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:554:in `block in load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:551:in `load_schema'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:417:in `attribute_types'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/model_schema.rb:443:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/type_caster/map.rb:16:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/arel/table.rb:107:in `type_for_attribute'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/table_metadata.rb:18:in `type'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:59:in `build'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:54:in `[]'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:126:in `block in expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `each'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `flat_map'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:79:in `expand_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/predicate_builder.rb:25:in `build_from_hash'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:1286:in `build_where_clause'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:729:in `where!'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/query_methods.rb:724:in `where'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:76:in `block in <class:Execution>'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `instance_exec'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `block in _exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:435:in `_exec_scope'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/scoping/named.rb:175:in `block in scope'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/execution.rb:157:in `perform_with_advisory_lock'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `public_send'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `block in method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:880:in `_scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation.rb:428:in `scoping'", "/usr/local/bundle/ruby/3.0.0/gems/activerecord-7.0.1/lib/active_record/relation/delegation.rb:108:in `method_missing'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/job_performer.rb:27:in `next'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:270:in `block (2 levels) in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:72:in `block in wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/execution_wrapper.rb:89:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/activesupport-7.0.1/lib/active_support/reloader.rb:71:in `wrap'", "/usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/scheduler.rb:269:in `block in create_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/ivar.rb:169:in `safe_execute'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/scheduled_task.rb:285:in `process_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/timer_set.rb:98:in `block in ns_post_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'", "/usr/local/bundle/ruby/3.0.0/gems/concurrent-ruby-1.1.9/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'"]
+Started GET "/favicon.ico" for 172.19.0.1 at 2022-02-28 17:46:16 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: fossbite_development. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for 172.19.0.1 at 2022-02-28 17:46:19 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mSET application_name = 'GoodJob::Notifier'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mLISTEN good_job[0m
+[GoodJob] Notifier subscribed with LISTEN
+DEPRECATION WARNING: GoodJob has pending database migrations. To create the migration files, run:
+    rails generate good_job:update
+To apply the migration files, run:
+    rails db:migrate
+ (called from migrated? at /usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/process.rb:33)
+  [1m[35m (2238.1ms)[0m  [1m[35mCREATE DATABASE "fossbite_development" ENCODING = 'unicode'[0m
+  
+ActiveRecord::NoDatabaseError (We could not find your database: postgres. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/tasks/postgresql_database_tasks.rb:12:in `connection'
+activerecord (7.0.1) lib/active_record/tasks/postgresql_database_tasks.rb:26:in `create'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:122:in `create'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:184:in `block in create_current'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:552:in `block (2 levels) in each_current_configuration'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:549:in `each'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:549:in `block in each_current_configuration'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:548:in `each'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:548:in `each_current_configuration'
+activerecord (7.0.1) lib/active_record/tasks/database_tasks.rb:184:in `create_current'
+activerecord (7.0.1) lib/active_record/errors.rb:242:in `block in <class:NoDatabaseError>'
+activesupport (7.0.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/favicon.ico" for 172.19.0.1 at 2022-02-28 17:46:21 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: postgres. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+):
+  
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:81:in `rescue in new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.1) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.1) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.1) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.1) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mUNLISTEN *[0m
+[GoodJob] Notifier unsubscribed with UNLISTEN
+DEPRECATION WARNING: GoodJob has pending database migrations. To create the migration files, run:
+    rails generate good_job:update
+To apply the migration files, run:
+    rails db:migrate
+ (called from migrated? at /usr/local/bundle/ruby/3.0.0/gems/good_job-2.10.0/lib/good_job/process.rb:33)
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE DATABASE "fossbite_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "fossbite_development" ENCODING = 'unicode'[0m
+  [1m[35m (119.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(798553871527969410)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EnableUuid (20220204110104)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (50.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220204110104"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220204110200)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220204110200"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDataSources (20220204110399)
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.5ms)[0m  [1m[35mCREATE TABLE "data_sources" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "source" integer, "settings" jsonb, "user_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_bb0c1038ee"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE INDEX "index_data_sources_on_user_id" ON "data_sources" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220204110399"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApps (20220204110401)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE "apps" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "status" integer, "user_id" uuid NOT NULL, "data_source_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_995ae3be76"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_834b50e82b"
+FOREIGN KEY ("data_source_id")
+  REFERENCES "data_sources" ("id")
+)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE INDEX "index_apps_on_user_id" ON "apps" ("user_id")[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE INDEX "index_apps_on_data_source_id" ON "apps" ("data_source_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220204110401"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePages (20220204110459)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "pages" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "name" character varying, "page_order" integer, "app_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_bb7ab116d7"
+FOREIGN KEY ("app_id")
+  REFERENCES "apps" ("id")
+)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE INDEX "index_pages_on_app_id" ON "pages" ("app_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220204110459"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComponents (20220204112459)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE "components" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "heading" character varying, "component_order" integer, "component_type" integer, "component_query" text, "page_id" uuid NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_90fac6d158"
+FOREIGN KEY ("page_id")
+  REFERENCES "pages" ("id")
+)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE INDEX "index_components_on_page_id" ON "components" ("page_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220204112459"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSettingsToComponents (20220212035424)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "components" ADD "settings" jsonb DEFAULT '{}'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220212035424"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeletedAtToApps (20220212163048)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "apps" ADD "deleted_at" timestamp(6)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE INDEX "index_apps_on_deleted_at" ON "apps" ("deleted_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220212163048"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeletedAtToPage (20220215114710)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pages" ADD "deleted_at" timestamp(6)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE INDEX "index_pages_on_deleted_at" ON "pages" ("deleted_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220215114710"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeletedAtToComponent (20220215114757)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "components" ADD "deleted_at" timestamp(6)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE INDEX "index_components_on_deleted_at" ON "components" ("deleted_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220215114757"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateForms (20220215143340)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE "forms" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "title" character varying, "app_id" uuid NOT NULL, "status" integer, "form_query" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_285139a4d5"
+FOREIGN KEY ("app_id")
+  REFERENCES "apps" ("id")
+)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE INDEX "index_forms_on_app_id" ON "forms" ("app_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220215143340"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFormElements (20220215143703)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE "form_elements" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "label" character varying, "form_id" uuid NOT NULL, "field_order" integer NOT NULL, "field_type" character varying NOT NULL, "required" boolean, "settings" jsonb, "db_column" character varying NOT NULL, "helper_text" character varying, "placeholder" character varying DEFAULT '', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7dbaaea3cb"
+FOREIGN KEY ("form_id")
+  REFERENCES "forms" ("id")
+)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE INDEX "index_form_elements_on_form_id" ON "form_elements" ("form_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220215143703"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeletedAtToForm (20220215143739)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "forms" ADD "deleted_at" timestamp(6)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE INDEX "index_forms_on_deleted_at" ON "forms" ("deleted_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220215143739"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLockers (20220225093638)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.5ms)[0m  [1m[35mCREATE TABLE "lockers" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "enkrypted_ciphertext" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220225093638"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniqueIndexToRecords (20220226133422)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_apps_on_name" ON "apps" ("name")[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_components_on_component_order_and_page_id" ON "components" ("component_order", "page_id")[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_form_elements_on_field_order_and_form_id" ON "form_elements" ("field_order", "form_id")[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pages_on_page_order_and_app_id" ON "pages" ("page_order", "app_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220226133422"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGoodJobs (20220227161903)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "pgcrypto"[0m
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE TABLE "good_jobs" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "queue_name" text, "priority" integer, "serialized_params" jsonb, "scheduled_at" timestamp, "performed_at" timestamp, "finished_at" timestamp, "error" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "active_job_id" uuid, "concurrency_key" text, "cron_key" text, "retried_good_job_id" uuid, "cron_at" timestamp)[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE "good_job_processes" ("id" uuid DEFAULT gen_random_uuid() NOT NULL PRIMARY KEY, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "state" jsonb)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_on_scheduled_at" ON "good_jobs" ("scheduled_at") WHERE (finished_at IS NULL)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_on_queue_name_and_scheduled_at" ON "good_jobs" ("queue_name", "scheduled_at") WHERE (finished_at IS NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_on_active_job_id_and_created_at" ON "good_jobs" ("active_job_id", "created_at")[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_on_concurrency_key_when_unfinished" ON "good_jobs" ("concurrency_key") WHERE (finished_at IS NULL)[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_on_cron_key_and_created_at" ON "good_jobs" ("cron_key", "created_at")[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_good_jobs_on_cron_key_and_cron_at" ON "good_jobs" ("cron_key", "cron_at")[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_on_active_job_id" ON "good_jobs" ("active_job_id")[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE INDEX "index_good_jobs_jobs_on_finished_at" ON "good_jobs" ("finished_at") WHERE retried_good_job_id IS NULL AND finished_at IS NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220227161903"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-28 17:48:03.975489"], ["updated_at", "2022-02-28 17:48:03.975489"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(798553871527969410)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[GoodJob] [1] GoodJob started scheduler with queues=* max_threads=5.
+  [1m[35m (0.2ms)[0m  [1m[35mSET application_name = 'GoodJob::Notifier'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mLISTEN good_job[0m
+[GoodJob] Notifier subscribed with LISTEN
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:48:45 +0000
+  [1m[36mGoodJob::Process Delete All (22.6ms)[0m  [1m[31mDELETE FROM "good_job_processes" WHERE "good_job_processes"."id" IN (SELECT "good_job_processes"."id" FROM "good_job_processes" LEFT JOIN pg_locks ON pg_locks.locktype = 'advisory' AND pg_locks.objsubid = 1 AND pg_locks.classid = ('x' || substr(md5('good_job_processes' || '-' || "good_job_processes"."id"::text), 1, 16))::bit(32)::int AND pg_locks.objid = (('x' || substr(md5('good_job_processes' || '-' || "good_job_processes"."id"::text), 1, 16))::bit(64) << 32)::bit(32)::int WHERE "pg_locks"."locktype" IS NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGoodJob::Process Create (4.4ms)[0m  [1m[32mINSERT INTO "good_job_processes" ("id", "created_at", "updated_at", "state") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", "29cf82e2-decd-4e87-9daa-77f808e1ac6a"], ["created_at", "2022-02-28 17:48:45.501017"], ["updated_at", "2022-02-28 17:48:45.501017"], ["state", "{\"id\":\"29cf82e2-decd-4e87-9daa-77f808e1ac6a\",\"hostname\":\"eb8075cf80f7\",\"pid\":1,\"proctitle\":\"bin/rails\",\"schedulers\":[\"GoodJob::Scheduler(queues=* max_threads=5)\"]}"]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (9.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGoodJob::Execution Pluck (46.7ms)[0m  [1m[34mSELECT "good_jobs"."scheduled_at", "good_jobs"."created_at" FROM "good_jobs" LEFT JOIN pg_locks ON pg_locks.locktype = 'advisory' AND pg_locks.objsubid = 1 AND pg_locks.classid = ('x' || substr(md5('good_jobs' || '-' || "good_jobs"."active_job_id"::text), 1, 16))::bit(32)::int AND pg_locks.objid = (('x' || substr(md5('good_jobs' || '-' || "good_jobs"."active_job_id"::text), 1, 16))::bit(64) << 32)::bit(32)::int WHERE "pg_locks"."locktype" IS NULL AND "good_jobs"."finished_at" IS NULL AND (scheduled_at > '2022-02-28 17:48:45.474476' OR "good_jobs"."scheduled_at" IS NULL AND (created_at > '2022-02-28 17:48:45.474476')) ORDER BY COALESCE(scheduled_at, created_at) ASC LIMIT $1[0m  [["LIMIT", 10000]]
+Processing by Rails::WelcomeController#index as HTML
+  [1m[36mGoodJob::Lockable Advisory Lock (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(('x'||substr(md5($1::text), 1, 16))::bit(64)::bigint) AS locked[0m  [["key", "good_job_processes-29cf82e2-decd-4e87-9daa-77f808e1ac6a"]]
+  [1m[36mGoodJob::Execution Pluck (54.9ms)[0m  [1m[34mSELECT "good_jobs"."scheduled_at", "good_jobs"."created_at" FROM "good_jobs" LEFT JOIN pg_locks ON pg_locks.locktype = 'advisory' AND pg_locks.objsubid = 1 AND pg_locks.classid = ('x' || substr(md5('good_jobs' || '-' || "good_jobs"."active_job_id"::text), 1, 16))::bit(32)::int AND pg_locks.objid = (('x' || substr(md5('good_jobs' || '-' || "good_jobs"."active_job_id"::text), 1, 16))::bit(64) << 32)::bit(32)::int WHERE "pg_locks"."locktype" IS NULL AND "good_jobs"."finished_at" IS NULL AND (scheduled_at < '2022-02-28 17:48:45.536330' OR "good_jobs"."scheduled_at" IS NULL) ORDER BY COALESCE(scheduled_at, created_at) ASC LIMIT $1[0m  [["LIMIT", 5]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /usr/local/bundle/ruby/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/ruby/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.7ms | Allocations: 490)
+Completed 200 OK in 50ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 6004)
+
+
+  [1m[36mGoodJob::Execution Load (29.0ms)[0m  [1m[34mSELECT "good_jobs".* FROM "good_jobs" WHERE "good_jobs"."id" IN (WITH "rows" AS MATERIALIZED ( SELECT "good_jobs"."id", "good_jobs"."active_job_id" FROM "good_jobs" WHERE "good_jobs"."finished_at" IS NULL AND ("good_jobs"."scheduled_at" <= '2022-02-28 17:48:45.650494' OR "good_jobs"."scheduled_at" IS NULL) ORDER BY priority DESC NULLS LAST ) SELECT "rows"."id" FROM "rows" WHERE pg_try_advisory_lock(('x' || substr(md5('good_jobs' || '-' || "rows"."active_job_id"::text), 1, 16))::bit(64)::bigint) LIMIT $1) ORDER BY priority DESC NULLS LAST[0m  [["LIMIT", 1]]
+  [1m[36mGoodJob::Lockable Unlock Session (4.5ms)[0m  [1m[34mSELECT pg_advisory_unlock_all()::text AS unlocked[0m
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:49:17 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/ruby/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/ruby/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 279)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1005)
+
+
+Started GET "/" for 172.19.0.1 at 2022-02-28 17:49:22 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/ruby/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/ruby/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 22)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mUNLISTEN *[0m
+[GoodJob] Notifier unsubscribed with UNLISTEN
+  [1m[36mGoodJob::Lockable Owns Advisory Lock? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM pg_locks WHERE pg_locks.locktype = 'advisory' AND pg_locks.objsubid = 1 AND pg_locks.classid = ('x' || substr(md5($1::text), 1, 16))::bit(32)::int AND pg_locks.objid = (('x' || substr(md5($2::text), 1, 16))::bit(64) << 32)::bit(32)::int AND pg_locks.pid = pg_backend_pid()[0m  [["key", "good_job_processes-29cf82e2-decd-4e87-9daa-77f808e1ac6a"], ["key", "good_job_processes-29cf82e2-decd-4e87-9daa-77f808e1ac6a"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGoodJob::Process Destroy (1.8ms)[0m  [1m[31mDELETE FROM "good_job_processes" WHERE "good_job_processes"."id" = $1[0m  [["id", "29cf82e2-decd-4e87-9daa-77f808e1ac6a"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mGoodJob::Lockable Advisory Unlock (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(('x'||substr(md5($1::text), 1, 16))::bit(64)::bigint) AS unlocked[0m  [["key", "good_job_processes-29cf82e2-decd-4e87-9daa-77f808e1ac6a"]]
