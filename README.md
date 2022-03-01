@@ -1,24 +1,23 @@
-# README
+## Requirements:
+Ruby 3.0.2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup if you don't use Docker
+```bash
+git clone git@github.com:akhil-gautam/lowcode-api.git
+cd lowcode-api
+bundle install
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails server
+```
 
-Things you may want to cover:
+## If you can use Docker
+```
+git clone git@github.com:akhil-gautam/lowcode-api.git
+cd lowcode-api
+docker-compose build
+docker-compose run --rm web web bundle exec rails db:create db:migrate
+docker-compose up
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+UI App: https://github.com/akhil-gautam/lowcode-ui
