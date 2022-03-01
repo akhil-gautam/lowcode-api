@@ -12,5 +12,7 @@ class QueryTest < ActiveInteraction::Base
       data_source: data_source,
       db_query: data_source_query
     )
+  rescue => e
+    errors.add(:db, e.message)
   end
 end

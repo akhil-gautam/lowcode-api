@@ -12,5 +12,7 @@ class ComponentQuery < ActiveInteraction::Base
       data_source: data_source,
       db_query: component.component_query
     )
+  rescue => e
+    errors.add(:db, e.message)
   end
 end

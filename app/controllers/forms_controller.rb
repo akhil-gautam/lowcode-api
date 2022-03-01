@@ -29,7 +29,7 @@ class FormsController < ApplicationController
     if outcome.valid?
       render json: { result: outcome.result }, status: :ok
     else
-      render json: { errors: outcome.errors },
+      render json: { errors: outcome.errors.full_messages.join(" and ") },
              status: :unprocessable_entity
     end
   end
